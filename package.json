@@ -1,0 +1,12 @@
+{
+  "name": "poc-prisma-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn workspace @poc-prisma-monorepo/api dev"
+  },
+  "workspaces": {
+    "packages": ["packages/*"]
+  }
+}
