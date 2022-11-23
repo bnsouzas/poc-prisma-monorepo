@@ -1,10 +1,12 @@
 {
-  "name": "@poc-prisma-monorepo/api",
-  "version": "1.0.0",
+  "name": "@bnsouzastests/api",
+  "version": "1.0.6",
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts",
+    "production": "ts-node src/index.ts",
+    "migrate": "prisma migrate deploy",
     "build": "tsc"
   },
   "devDependencies": {
@@ -15,7 +17,7 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "@poc-prisma-monorepo/repository": "1.0.0",
+    "@bnsouzastests/repository": "1.0.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
   }

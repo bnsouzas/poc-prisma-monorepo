@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  api:
+    image: prisma-monorepo-api
+    build:
+      context: ./packages/api/
+    environment:
+      DATABASE_URL: /app/dev.db
+    volumes:
+      - ./packages/repository/prisma/dev.db:/app/dev.db
+    ports:
+      - 3333:3333
