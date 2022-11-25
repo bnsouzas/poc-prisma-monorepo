@@ -5,6 +5,7 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
+    "prebuild": "yarn generate",
     "build": "yarn run clean && tsc",
     "migrate:create": "npx prisma migrate dev --name",
     "generate": "prisma generate",
