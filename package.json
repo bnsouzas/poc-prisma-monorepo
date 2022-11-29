@@ -1,11 +1,12 @@
 {
   "name": "poc-prisma-monorepo",
-  "version": "1.0.6",
+  "version": "1.0.10",
   "private": true,
   "license": "MIT",
   "scripts": {
     "api:dev": "yarn workspace @bnsouzastests/api dev",
-    "repository:generate": "yarn workspace @bnsouzastests/repository generate"
+    "repository:generate": "yarn workspace @bnsouzastests/repository generate",
+    "repository:publish": "yarn workspace @bnsouzastests/repository publish"
   },
   "publishConfig": {
     "access": "public"

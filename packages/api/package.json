@@ -1,6 +1,6 @@
 {
   "name": "@bnsouzastests/api",
-  "version": "1.0.6",
+  "version": "1.0.10",
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "@bnsouzastests/repository": "1.0.6",
+    "@bnsouzastests/repository": "1.0.10",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
   }
