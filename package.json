@@ -4,7 +4,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "build": "yarn workspace @bnsouzastests/api build && yarn workspace @bnsouzastests/repository build",
     "api:dev": "yarn workspace @bnsouzastests/api dev",
+    "api:prod": "yarn workspace @bnsouzastests/api start:prod",
     "repository:generate": "yarn workspace @bnsouzastests/repository generate",
     "repository:publish": "yarn workspace @bnsouzastests/repository publish"
   },

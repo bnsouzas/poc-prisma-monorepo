@@ -1,7 +1,24 @@
-FROM node:18-alpine
-WORKDIR /app
-COPY ./package.json ./
+FROM node:18-alpine as base
+ENV TZ America/Sao_Paulo
+RUN echo $TZ >  /etc/timezone
+ENV LC_ALL pt_BR.UTF-8
+
+FROM base as builder
+WORKDIR /builder
+COPY package.json ./
 RUN yarn
 COPY . .
+RUN yarn build
+
+FROM base as dependencies
+WORKDIR /dependencies
+COPY package.json ./
+RUN yarn --prod
+
+FROM base
+WORKDIR /app
+COPY --from=dependencies /dependencies/node_modules ./node_modules
+COPY --from=builder /builder/package.json ./
+COPY --from=builder /builder/dist/ ./dist
 EXPOSE 3333
-ENTRYPOINT [ "yarn", "production" ]
+ENTRYPOINT [ "yarn", "start:prod" ]
