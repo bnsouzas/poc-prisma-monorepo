@@ -1,4 +1,7 @@
-FROM node:18-alpine as base
+FROM node:18-slim as base
+RUN apt-get update && \
+    apt-get install openssl && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 ENV TZ America/Sao_Paulo
 RUN echo $TZ >  /etc/timezone
 ENV LC_ALL pt_BR.UTF-8
